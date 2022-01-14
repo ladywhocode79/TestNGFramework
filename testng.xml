@@ -1,0 +1,30 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestNG Suite">
+    <test name="Login">
+        <classes>
+            <class name="org.example.FirstPage"/>
+            <class name="org.example.SecondPage"/>
+
+        </classes>
+    </test>
+    <test name="SecondLogin">
+        <classes>
+            <class name="org.example.FifthPage"/>
+            <class name="org.example.SecondPage">
+                <methods>
+                    <exclude name="secondPageFourth"></exclude>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="ThirdLogin">
+        <classes>
+            <class name="org.example.FifthPage"/>
+            <class name="org.example.ThirdPage">
+                <methods>
+                    <include name="thirdPageFourth"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
